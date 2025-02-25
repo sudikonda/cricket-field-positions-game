@@ -143,8 +143,14 @@ function App() {
           {/* Cricket Pitch */}
           <div className="absolute left-1/2 top-1/2 w-16 h-64 bg-green-400 border-2 border-white transform -translate-x-1/2 -translate-y-1/2">
             {/* Crease lines */}
-            <div className="absolute top-12 w-full h-1 bg-white"></div>
-            <div className="absolute bottom-12 w-full h-1 bg-white"></div>
+            <div className="absolute top-12 w-full h-1 bg-white">
+              {/* Batsman markers */}
+              <div className="absolute left-1/2 top-1/2 w-3 h-3 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+            </div>
+            <div className="absolute bottom-12 w-full h-1 bg-white">
+              {/* Bowler markers */}
+              <div className="absolute left-1/2 bottom-[12%] w-3 h-3 bg-black rounded-full transform -translate-x-1/2"></div>
+            </div>
           </div>
 
           {/* Positions */}
@@ -173,9 +179,6 @@ function App() {
             </div>
           ))}
 
-          {/* Batsman and Bowler markers */}
-          {/*<div className="absolute left-1/2 top-1/2 w-3 h-3 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>*/}
-          {/*<div className="absolute left-1/2 bottom-[10%] w-3 h-3 bg-black rounded-full transform -translate-x-1/2"></div>*/}
         </div>
       </div>
     </div>
