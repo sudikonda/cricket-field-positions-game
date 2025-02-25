@@ -1,6 +1,6 @@
 export const positions = [
   // Off Side positions (left side)
-  { name: "Third Man", x: 15, y: 10 },
+  { name: "Third Man", x: 30, y: 5 },
   { name: "Deep Backward Point", x: 15, y: 20 },
   { name: "Deep Point", x: 5, y: 35 },
   { name: "Backward Point", x: 20, y: 35 },
@@ -23,7 +23,7 @@ export const positions = [
   { name: "Wicket Keeper", x: 50, y: 30 },
   
   // Leg Side positions (right side)
-  { name: "Deep Fine Leg", x: 90, y: 5 },
+  { name: "Deep Fine Leg", x: 67, y: 5 },
   { name: "Long Leg", x: 85, y: 20 },
   { name: "Fine Leg", x: 80, y: 30 },
   { name: "Leg Slip", x: 70, y: 30 },

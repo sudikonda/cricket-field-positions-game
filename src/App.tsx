@@ -174,8 +174,8 @@ function App() {
           ))}
 
           {/* Batsman and Bowler markers */}
-          <div className="absolute left-1/2 top-1/2 w-3 h-3 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute left-1/2 bottom-[10%] w-3 h-3 bg-black rounded-full transform -translate-x-1/2"></div>
+          {/*<div className="absolute left-1/2 top-1/2 w-3 h-3 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>*/}
+          {/*<div className="absolute left-1/2 bottom-[10%] w-3 h-3 bg-black rounded-full transform -translate-x-1/2"></div>*/}
         </div>
       </div>
     </div>
