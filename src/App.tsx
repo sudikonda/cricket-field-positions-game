@@ -1,9 +1,11 @@
 import React, { useState, useCallback } from 'react';
+import Confetti from 'react-confetti';
 import { Trophy, Play, Eye, Lightbulb } from 'lucide-react';
 import { positions } from './positions';
 import type { Position, GameState } from './types';
 
 function App() {
+  const [showConfetti, setShowConfetti] = useState(false);
   const [gameState, setGameState] = useState<GameState>({
     score: 0,
     currentPosition: null,
@@ -42,6 +44,11 @@ function App() {
       showAllPositions: false,
     }));
 
+    if (isCorrect) {
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 3000);
+    }
+
     // Set next position after a delay
     setTimeout(() => {
       const nextPosition = positions[Math.floor(Math.random() * positions.length)];
@@ -78,7 +85,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-800 to-green-600 p-8">
+    <div className="min-h-screen bg-gradient-to-b from-green-800 to-green-600 p-8 relative">
+      {showConfetti && <Confetti 
+        gravity={0.1}
+        initialVelocityY={-20}
+        wind={0.05}
+        friction={0.99}
+        recycle={false}
+        colors={['#FFC700', '#FF0000', '#2E3191', '#41BBC7']}
+        numberOfPieces={400}
+        tweenDuration={3000}
+      />}
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-xl p-6 mb-8">
           <div className="flex justify-between items-center mb-6">
@@ -163,6 +180,7 @@ function App() {
               <button
                 onClick={() => handlePositionClick(position)}
                 disabled={!gameState.gameStarted}
+                title={gameState.gameStarted ? `Select ${position.name}` : 'Start game to select positions'}
                 className={`w-4 h-4 rounded-full transition-colors
                   ${gameState.gameStarted ? 'cursor-pointer hover:bg-blue-400' : 'cursor-not-allowed'}
                   ${position.name === gameState.currentPosition?.name && gameState.isCorrect ? 'bg-green-400' : 
